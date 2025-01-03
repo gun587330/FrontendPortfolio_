@@ -21,12 +21,19 @@ export const Wrapper__title = styled.div`
     font-weight : bold;
     margin-bottom: 80px;
 `
-// reference: Writer
-export const Author__textBox = styled.input`
+
+export const Writer = styled.input`
     height: 52px;
     padding-left: 10px;
     border: 1px solid #bdbdbd;
 `
+
+export const Password = styled.input`
+    height: 52px;
+    padding-left: 10px;
+    border: 1px solid #bdbdbd;
+`
+
 // reference: WriterWrapper
 export const Wrapper__header = styled.div`
     width: 996px;
@@ -59,7 +66,7 @@ export const Title = styled.div`
     margin-bottom: 50px;
 `
 
-export const Title__textBox = styled.input`
+export const Subject = styled.input`
     height: 52px;
     padding-left: 10px;
     border: 1px solid #bdbdbd;
@@ -78,7 +85,7 @@ export const Content = styled.div`
     margin-bottom: 30px;
 `
 
-export const Content__textBox = styled.textarea`
+export const Contents = styled.textarea`
     height: 480px;
     border: 1px solid #BDBDBD;
     padding-top: 10px;

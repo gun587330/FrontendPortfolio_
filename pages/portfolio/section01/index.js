@@ -2,13 +2,14 @@ import {
     Wrapper, 
     Wrapper__header, 
     Wrapper__title, 
-    Author, 
-    Author__textBox, 
+    Author,
+    Writer,
+    Password,
     Word, 
     Title, 
-    Title__textBox,
+    Subject,
     Content, 
-    Content__textBox, 
+    Contents, 
     Address, 
     AddressMail__textBox, 
     Address__Button, 
@@ -22,37 +23,64 @@ import {
     Setting__radio, 
     Wrapper__footer, 
     Enroll__button, 
-    Wrapper__body, 
-    Base
+    Wrapper__body,
 } from '../../../styles/section05'
+import { useState } from "react"
 
 export default function PortfolioPage(){
     //Javascript Zone
+
+    //State 선언
+    const [writer, setWriter] = useState("")
+    const [password, setPassword] = useState("")
+    const [subject, setSubject] = useState("")
+    const [contents, setContents] = useState("")
+
+    function onChangeWriter(event){
+        // 스테이트에 데이턱가 잘 저장되었는지 체크용
+        // console.log(event.target.value)
+        setWriter(event.target.value)
+    }
+
+    function onChangePassword(event){
+        setPassword(event.target.value)
+    }
+
+    function onChangeSubject(event){
+        setSubject(event.target.value)
+    }
+
+    function onChangeContents(event){
+        setContents(event.target.value)
+    }
 
     return(
         // HTML Zone
         <Wrapper>
             <Wrapper__title>게시물 등록</Wrapper__title>
             <Wrapper__header>
+
                 <Author>
                     <Word>작성자</Word>
-                    <Author__textBox type="text" placeholder="이름을 적어주세요." />
+                    <Writer type="text" placeholder="이름을 적어주세요." onChange={onChangeWriter}/>
                 </Author>
+
                 <Author>
                     <Word>비밀번호</Word>
-                    <Author__textBox type="password" placeholder="바말번호를 입력해주세요." />
+                    <Password type="password" placeholder="바말번호를 입력해주세요." onChange={onChangePassword} />
                 </Author>
+
             </Wrapper__header>
 
             <Wrapper__body>
                 <Title>
                     <Word>제목</Word>
-                    <Title__textBox placeholder="제목을 작성해주세요." />
+                    <Subject placeholder="제목을 작성해주세요." onChange={onChangeSubject}/>
                 </Title>
 
                 <Content>
                     <Word>내용</Word>
-                    <Content__textBox placeholder="내용을 작성해주세요." />
+                    <Contents placeholder="내용을 작성해주세요." onChange={onChangeContents}/>
                 </Content>
 
                 <Address>
